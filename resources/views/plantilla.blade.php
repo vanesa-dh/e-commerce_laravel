@@ -32,13 +32,13 @@
       <div class="header_container">
         <!-- INICIO contenedor del logo -->
         <div class="header_logo">
-            <a href="index.html"><img src="img/logo.png" alt="imagen del logo"></a>
+            <a href="inicio.php"><img src="img/logo.png" alt="imagen del logo"></a>
         </div>
         <!-- FIN contenedor del logo -->
         <!-- INICIO contenedor del menu -->
         <div class="header_nav">
           <ul>
-            <li><a href="index.html">Inicio</a></li>
+            <li><a href="inicio.php">Inicio</a></li>
             <li><a href="secciones/productos.html">Productos </a></li>
             <li><a href="secciones/proximamente.html">Ofertas </a></li>
             <li><a href="secciones/proximamente.html">Locales </li>
@@ -71,7 +71,7 @@
 
     @yield("principal")
 
-  
+
     <!-- INICIO del FOOTER -->
         <footer>
           <div class="footer_container">
