@@ -12,38 +12,24 @@
 */
 
 
-Route::get('/', function () {
-    return view('inicio');
-});
+Route::get('/', 'HomeController@index'); //ruta a la página principal
 
-Route::get('/productos', function () {
-    return view('productos');
-});
+Route::get('/productos', 'ProductsController@index'); //ruta a la página de productos
 
-Route::get('/detalles', function () {
-    return view('detalles');
-});
+Route::get('/detalles', 'ProductsController@show'); //ruta a los detalles de un producto
 
-Route::get('/faq', function () {
-    return view('faq');
-});
+Route::get('/faq', 'HomeController@showFaq'); //ruta a las preguntas frecuentes
 
-Route::get('/contacto', function () {
-    return view('contacto');
-});
+Route::get('/contacto', 'HomeController@showContact'); //ruta a la página de contacto
 
-Route::get('/carrito', function () {
-    return view('carrito');
-});
+Route::get('/carrito', 'CartsController@index'); //ruta al carrito
 
-Route::get('/perfil', function () {
-    return view('perfil');
-});
+Route::get('/perfil', 'UsersController@index'); //ruta al perfil del usuario
 
-Route::get('/registro', function () {
-    return view('perfil');
-});
+Route::get('/registro', 'UsersController@showRegister'); //ruta GET al formulario de registro
 
-Route::get('/login', function () {
-    return view('perfil');
-});
+Route::post('/registro', 'UsersController@createUser'); //ruta POST al formulario de registro
+
+Route::get('/login', 'UserController@showLogin'); // ruta GET al formulario de login
+
+Route::post('/login', 'UserController@login'); //ruta POST al formulario de login
