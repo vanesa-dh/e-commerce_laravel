@@ -16,7 +16,7 @@ Route::get('/', 'HomeController@index'); //ruta a la página principal
 
 Route::get('/productos', 'ProductsController@index'); //ruta a la página de productos
 
-Route::get('/detalles', 'ProductsController@show'); //ruta a los detalles de un producto
+Route::get('/detalles/{id}', 'ProductsController@show'); //ruta a los detalles de un producto
 
 Route::get('/faq', 'HomeController@showFaq'); //ruta a las preguntas frecuentes
 
@@ -30,6 +30,6 @@ Route::get('/registro', 'UsersController@showRegister'); //ruta GET al formulari
 
 Route::post('/registro', 'UsersController@createUser'); //ruta POST al formulario de registro
 
-Route::get('/login', 'UserController@showLogin'); // ruta GET al formulario de login
+Route::get('/login', 'UsersController@showLogin'); // ruta GET al formulario de login
 
-Route::post('/login', 'UserController@login'); //ruta POST al formulario de login
+Route::post('/login', 'UsersController@login'); //ruta POST al formulario de login

@@ -32,24 +32,24 @@
       <div class="header_container">
         <!-- INICIO contenedor del logo -->
         <div class="header_logo">
-            <a href="inicio.php"><img src="img/logo.png" alt="imagen del logo"></a>
+            <a href="/"><img src="img/logo.png" alt="imagen del logo"></a>
         </div>
         <!-- FIN contenedor del logo -->
         <!-- INICIO contenedor del menu -->
         <div class="header_nav">
           <ul>
-            <li><a href="inicio.php">Inicio</a></li>
-            <li><a href="secciones/productos.html">Productos </a></li>
-            <li><a href="secciones/proximamente.html">Ofertas </a></li>
-            <li><a href="secciones/proximamente.html">Locales </li>
-            <li><a href="secciones/proximamente.html">Nosotros </li>
-            <li><a href="secciones/proximamente.html">Contacto </li>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/productos">Productos </a></li>
+            {{-- <li><a href="secciones/proximamente.html">Ofertas </a></li> --}}
+            {{-- <li><a href="secciones/proximamente.html">Locales </li> --}}
+            <li><a href="/faq">FAQ </li>
+            <li><a href="/contacto">Contacto </li>
           </ul>
         </div>
         <!-- FIN contenedor del menu -->
         <!-- INICIO contenedor de la barra de busqueda -->
         <div class="header_busqueda">
-          <form class="header_busquedaForm" action="index.html" method="post">
+          <form class="header_busquedaForm" action="/" method="post">
             <input class="header_busquedaInput" type="search" name="busqueda" value="" placeholder="Buscar productos...">
           </form>
         </div>
@@ -57,9 +57,9 @@
         <!-- INICIO contenedor de los iconos -->
         <div class="header_iconos">
           <ul class="header_ul">
-            <li><a href="secciones/registro.php"><i class="fas fa-user-plus fa-2x"></i></a></li>
-            <li><a href="secciones/login.php"><i class="fas fa-user fa-2x"></i></a></li>
-            <li><a href="secciones/proximamente.html"><i class="fas fa-cart-arrow-down fa-2x"></i></a></li>
+            <li><a href="/registro"><i class="fas fa-user-plus fa-2x"></i></a></li>
+            <li><a href="/login"><i class="fas fa-user fa-2x"></i></a></li>
+            <li><a href="/carrito"><i class="fas fa-cart-arrow-down fa-2x"></i></a></li>
           </ul>
         </div>
         <!-- FIN contenedor de los iconos -->
@@ -81,9 +81,9 @@
                   <ul class="footer_ul">
                     <!-- Lista de elementos de la parte AYUDA del footer -->
                     <li class="footer_titulos">AYUDA</li>
-                    <li><a href="secciones/faq.html">Preguntas frecuentes</a></li>
-                    <li><a href="secciones/proximamente.html">Promociones y descuentos</li><br>
-                    <li><a href="secciones/proximamente.html">Medios de pago</li>
+                    <li><a href="/faq">Preguntas frecuentes</a></li>
+                    {{-- <li><a href="secciones/proximamente.html">Promociones y descuentos</li><br> --}}
+                    <li><a href="/faq">Medios de pago</li>
                     <li class="footer_iconos">
                         <a href="#"><i class="fab fa-cc-visa fa-2x"></i></a>
                         <a href="#"><i class="fab fa-cc-diners-club fa-2x"></i></a>
@@ -98,11 +98,11 @@
               <ul class="footer_ul">
               <!-- Lista de elementos de la parte MI CUENTA del footer -->
                     <li class="footer_titulos">MI CUENTA</li>
-                    <li><a href="secciones/proximamente.html">Estado de mi pedido</a></li>
-                    <li><a href="secciones/login.php">Login</a></li>
-                    <li><a href="secciones/registro.php">Registrarse</a></li>
-                    <li><a href="#">Recuperar contraseña</a></li>
-                    <li><a href="secciones/perfil.html">Mi perfil</a></li>
+                    {{-- <li><a href="/carrito">Estado de mi pedido</a></li> --}}
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/registro">Registrarse</a></li>
+                    {{-- <li><a href="#">Recuperar contraseña</a></li> --}}
+                    <li><a href="/perfil">Mi perfil</a></li>
               </ul>
             </div>
 
@@ -113,7 +113,7 @@
                     <li class="footer_titulos">VISITANOS</li>
                     <li>Suscribite al newsletter:</li>
                     <li>
-                      <form class="footer_newsletter" action="index.html" method="post">
+                      <form class="footer_newsletter" action="/" method="post">
                         <input type="email" name="email" value="" placeholder="Ingresa tu mail">
                       </form>
                     </li><br>
@@ -129,7 +129,7 @@
             <!-- Contenedor de la parte DIRECCIONES del footer -->
                   <ul class="footer_ul">
                   <!-- Lista de elementos de la parte DIRECCIONES del footer -->
-                    <li class="footer_marca"><a href="index.html"><img src="img/logo.png" alt="imagen del logo"></a></li>
+                    <li class="footer_marca"><a href="/"><img src="img/logo.png" alt="imagen del logo"></a></li>
                     <li>VISITÁ NUESTRO<strong> SHOWROOM </strong><br></li>
                     <li>de Lunes a Viernes de 9.00 a 18.00 hs</li><br>
                     <li><i class="fas fa-home"></i> Leyden 354, Buenos Aires | Argentina</li>

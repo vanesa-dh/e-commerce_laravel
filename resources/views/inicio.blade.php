@@ -5,7 +5,7 @@
   <!-- INICIO del BANNER -->
 
   {{-- Aca va un banner --}}
-  
+
   <!-- FIN del BANNER -->
 
   <!-- INICIO DE PRODUCTOS DE MUESTRA-->
@@ -13,7 +13,7 @@
 
     <div class="product_container">
       <div class="product_imagen">
-          <a href="index.html"><img src="img/sweaterwhite.jpg" alt="photo"></a>
+          <a href="/detalles"><img src="img/sweaterwhite.jpg" alt="photo"></a>
       </div>
       <div class="product_descripcion">
           Sweater Winter
@@ -25,7 +25,7 @@
 
     <div class="product_container">
       <div class="product_imagen">
-          <a href="index.html"><img src="img/camisabrickfuxia.jpg" alt="photo"></a>
+          <a href="/detalles"><img src="img/camisabrickfuxia.jpg" alt="photo"></a>
       </div>
       <div class="product_descripcion">
           Camisa Americana
@@ -37,7 +37,7 @@
 
      <div class="product_container">
        <div class="product_imagen">
-           <a href="index.html"><img src="img/chaleco.jpg" alt="photo"></a>
+           <a href="/detalles"><img src="img/chaleco.jpg" alt="photo"></a>
        </div>
        <div class="product_descripcion">
            Chaleco Alaska
