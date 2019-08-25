@@ -434,6 +434,8 @@ text-decoration:none;
   padding: 0px 25px 0px;
 }
 .question-container h3{
+  font-size: 1.2em;
+  font-weight: bold;
   color: #c78283;
 }
 .question-container h4{
@@ -441,7 +443,7 @@ text-decoration:none;
 }
 
 .link-inicio p {
-  padding: 0px 25px 0px;
+  padding: 15px 25px 0px;
   color: inherit;
   font-size: 20px;
 }
