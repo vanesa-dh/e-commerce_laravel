@@ -19,6 +19,10 @@ body {
   background-image: url("../img/hearts_2.png");
 }
 
+.theme3 {
+  background-image: url("../img/hearts_1.png");
+}
+
 .contenedor{
   /* Contenedor del contenido del body */
   margin: 35px 70px 25px;

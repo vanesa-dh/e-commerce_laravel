@@ -33,7 +33,7 @@
   </head>
 
 <!-- INICIO del BODY -->
-  <body class="theme1" id="myTheme">
+  <body class="theme1">
   <!-- INICIO del CONTENEDOR -->
   <div class="contenedor">
     <!-- INICIO del HEADER -->
