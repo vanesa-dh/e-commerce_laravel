@@ -8,7 +8,7 @@ $titulo = "FAQ - Preguntas frecuentes";
     <section class="question-container">
       <div class="link-inicio">
         <p>
-          <a href="/inicio">INICIO </a><i class="fas fa-arrow-right"></i> <strong>Preguntas frecuentes</strong>
+          <a href="/">INICIO </a><i class="fas fa-arrow-right"></i> <strong>Preguntas frecuentes</strong>
         </p>
       </div>
 

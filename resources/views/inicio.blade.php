@@ -9,8 +9,9 @@
   <!-- FIN del BANNER -->
 
   <!-- INICIO DE PRODUCTOS DE MUESTRA-->
-  <div class="products_container">
 
+  <div class="products_container">
+  
     <div class="product_container">
       <div class="product_imagen">
           <a href="/detalles"><img src="img/sweaterwhite.jpg" alt="photo"></a>

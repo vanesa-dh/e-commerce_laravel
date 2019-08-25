@@ -112,12 +112,14 @@
               <ul class="footer_ul">
               <!-- Lista de elementos de la parte VISITANOS del footer -->
                     <li class="footer_titulos">VISITANOS</li>
-                    <li>Suscribite al newsletter:</li>
+                    {{-- <li>Suscribite al newsletter:</li>
                     <li>
                       <form class="footer_newsletter" action="/" method="post">
                         <input type="email" name="email" value="" placeholder="Ingresa tu mail">
                       </form>
-                    </li><br>
+                    </li><br> --}}
+                    <li>CONOCÉ NUESTRO<strong> SHOWROOM </strong><br></li>
+                    <li>de Lunes a Viernes de 9.00 a 18.00 hs</li><br>
                     <li class="footer_iconos"> Seguinos en
                       <a href="http://facebook.com" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>
                       <a href="http://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
@@ -131,8 +133,8 @@
                   <ul class="footer_ul">
                   <!-- Lista de elementos de la parte DIRECCIONES del footer -->
                     <li class="footer_marca"><a href="/"><img src="img/logo.png" alt="imagen del logo"></a></li>
-                    <li>VISITÁ NUESTRO<strong> SHOWROOM </strong><br></li>
-                    <li>de Lunes a Viernes de 9.00 a 18.00 hs</li><br>
+                    {{-- <li>VISITÁ NUESTRO<strong> SHOWROOM </strong><br></li>
+                    <li>de Lunes a Viernes de 9.00 a 18.00 hs</li><br> --}}
                     <li><i class="fas fa-home"></i> Leyden 354, Buenos Aires | Argentina</li>
                     <li><i class="fas fa-phone"></i><a href="callto:0054119553333"> +54(11) 9555 3333</a></li>
                     <li><i class="fas fa-envelope"></i><a href="mailto:hello@vasanjohel.com"> hello@vasanjohel.com</a></li>

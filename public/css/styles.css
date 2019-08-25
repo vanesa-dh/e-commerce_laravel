@@ -254,9 +254,6 @@ border-radius: 20px;
 .product_botton_fav a{
 text-decoration:none;
 }
-
-
-
 /* FIN DE DETALLES DE PRODUCTOS */
 
 /* INICIO STYLES del FOOTER */
@@ -345,6 +342,17 @@ text-decoration:none;
   margin-top:25px;
   margin-bottom: 25px;
 }
+
+/* Agrego para el contenedor del mapa */
+.iframe-container iframe {
+  display:flex;
+  flex-grow: 1;
+  padding: 5px 25px 5px;
+  color:inherit;
+  height: 100%;
+  width: 100%;
+}
+/* Fin del contenedor de mapa */
 
 /* INICIO Styles del REGISTRO y LOGIN */
 .hypervinc_register, .hypervinc_login{
