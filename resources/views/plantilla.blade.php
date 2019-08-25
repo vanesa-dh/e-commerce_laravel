@@ -83,7 +83,8 @@
                     <li class="footer_titulos">AYUDA</li>
                     <li><a href="/faq">Preguntas frecuentes</a></li>
                     {{-- <li><a href="secciones/proximamente.html">Promociones y descuentos</li><br> --}}
-                    <li><a href="/faq">Medios de pago</li>
+                    <li><a href="/faq#talles">Tabla de talles</li>
+                    <li><a href="/faq#medios">Medios de pago</li>
                     <li class="footer_iconos">
                         <a href="#"><i class="fab fa-cc-visa fa-2x"></i></a>
                         <a href="#"><i class="fab fa-cc-diners-club fa-2x"></i></a>

@@ -26,7 +26,7 @@ $titulo = "FAQ - Preguntas frecuentes";
             <li>Te mantendremos al tanto del estado de tu pedido por mail. Por cualquier duda, siempre podés contactarte a través de consultas@VASANJOHEL.com.ar.</li>
           </ol>
 
-      <h3>¿Cómo sé cúal es mi talle?</h3>
+      <h3 id='talles'>¿Cómo sé cúal es mi talle?</h3>
       <p>
         En la descripción de cada producto podés ver el talle y podés averiguar cuál es el tuyo con la siguiente tabla de talles:
       </p>
@@ -35,7 +35,7 @@ $titulo = "FAQ - Preguntas frecuentes";
         <img src="img/tabla_deTalles.png" alt="tabla de talles">
       </div>
 
-      <h3>¿Qué formas de pago puedo aprovechar para realizar mi compra?</h3>
+      <h3 id='medios'>¿Qué formas de pago puedo aprovechar para realizar mi compra?</h3>
       <p>
         Disponemos de los siguientes medios de pago:
       </p>
