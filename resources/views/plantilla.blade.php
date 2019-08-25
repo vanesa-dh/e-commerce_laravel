@@ -12,6 +12,9 @@
     <!-- Librería de JQuery / para el banner -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Fin de Librería de JQuery -->
+    <!-- Inicio Link al JS de thema -->
+    <script type="text/javascript" src="js/themes.js"></script>
+    <!-- Fin Link al JS de thema -->
     <!-- Librería de Bootstrap / para el banner -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -30,7 +33,7 @@
   </head>
 
 <!-- INICIO del BODY -->
-  <body class="theme1">
+  <body class="theme1" id="myTheme">
   <!-- INICIO del CONTENEDOR -->
   <div class="contenedor">
     <!-- INICIO del HEADER -->
@@ -49,7 +52,8 @@
             <li><a href="/productos">Productos</a></li>
             <li><a href="/faq">FAQ</a></li>
             <li><a href="/contacto">Contacto</a></li>
-            <li><a href="/"><i class="fas fa-paint-roller fa-2x"></i></a></li>
+            {{-- <li><a id="myTheme" onclick="changeTheme()"><i class="fas fa-paint-roller fa-2x"></i></a></li> --}}
+            <li><a onclick="changeTheme()"><i class="fas fa-paint-roller fa-2x"></i></a></li>
           </ul>
         </div>
         <!-- FIN contenedor del menu -->
