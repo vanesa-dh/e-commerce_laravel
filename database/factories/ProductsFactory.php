@@ -6,10 +6,10 @@ use App\Product;
 use Faker\Generator as Faker;
 
 $factory->define(Product::class, function (Faker $faker) {
+    $filePath = storage_path('app/public/products');
     return [
         'name' => $faker->word,
-        'image' => $faker->image($dir, $width, $height, 'cats'),
-        'price' => $faker->randomNumber($nbDigits = NULL, $strict = false),
-        'category_id' => $faker->foreignerIdNumber
+        'image' => $faker->image($filePath, $width = 640, $height = 480, 'cats'),
+        'price' => $faker->randomFloat(2, 100, 9999),
     ];
 });

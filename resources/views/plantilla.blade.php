@@ -20,9 +20,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- Fin de Librería de Bootstrap -->
     <!-- Link a la hoja de estilos propia -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <!-- Link a la hoja de estilos normalize.css -->
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="/css/normalize.css">
     <!-- Link a los iconos de FontAwesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!-- Iconito de la pestania del navegador, favicon -->
@@ -42,7 +42,7 @@
       <div class="header_container">
         <!-- INICIO contenedor del logo -->
         <div class="header_logo">
-            <a href="/"><img src="img/logo.png" alt="imagen del logo"></a>
+            <a href="/"><img src="/img/logo.png" alt="imagen del logo"></a>
         </div>
         <!-- FIN contenedor del logo -->
         <!-- INICIO contenedor del menu -->
@@ -142,7 +142,7 @@
             <!-- Contenedor de la parte DIRECCIONES del footer -->
                   <ul class="footer_ul">
                   <!-- Lista de elementos de la parte DIRECCIONES del footer -->
-                    <li class="footer_marca"><a href="/"><img src="img/logo.png" alt="imagen del logo"></a></li>
+                    <li class="footer_marca"><a href="/"><img src="/img/logo.png" alt="imagen del logo"></a></li>
                     {{-- <li>VISITÁ NUESTRO<strong> SHOWROOM </strong><br></li>
                     <li>de Lunes a Viernes de 9.00 a 18.00 hs</li><br> --}}
                     <li><i class="fas fa-home"></i> Leyden 354, Buenos Aires | Argentina</li>
