@@ -42,7 +42,7 @@
       <div class="header_container">
         <!-- INICIO contenedor del logo -->
         <div class="header_logo">
-            <a href="/"><img src="img/logo.png" alt="imagen del logo"></a>
+            <a href="/"><img src="/img/logo.png" alt="imagen del logo"></a>
         </div>
         <!-- FIN contenedor del logo -->
         <!-- INICIO contenedor del menu -->
@@ -142,7 +142,7 @@
             <!-- Contenedor de la parte DIRECCIONES del footer -->
                   <ul class="footer_ul">
                   <!-- Lista de elementos de la parte DIRECCIONES del footer -->
-                    <li class="footer_marca"><a href="/"><img src="img/logo.png" alt="imagen del logo"></a></li>
+                    <li class="footer_marca"><a href="/"><img src="/img/logo.png" alt="imagen del logo"></a></li>
                     {{-- <li>VISITÁ NUESTRO<strong> SHOWROOM </strong><br></li>
                     <li>de Lunes a Viernes de 9.00 a 18.00 hs</li><br> --}}
                     <li><i class="fas fa-home"></i> Leyden 354, Buenos Aires | Argentina</li>
