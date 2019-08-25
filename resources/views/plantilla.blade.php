@@ -30,7 +30,7 @@
   </head>
 
 <!-- INICIO del BODY -->
-  <body>
+  <body class="theme1">
   <!-- INICIO del CONTENEDOR -->
   <div class="contenedor">
     <!-- INICIO del HEADER -->
@@ -47,10 +47,9 @@
           <ul>
             <li><a href="/">Inicio</a></li>
             <li><a href="/productos">Productos</a></li>
-            {{-- <li><a href="secciones/proximamente.html">Ofertas </a></li> --}}
-            {{-- <li><a href="secciones/proximamente.html">Locales </li> --}}
             <li><a href="/faq">FAQ</a></li>
             <li><a href="/contacto">Contacto</a></li>
+            <li><a href="/"><i class="fas fa-paint-roller fa-2x"></i></a></li>
           </ul>
         </div>
         <!-- FIN contenedor del menu -->

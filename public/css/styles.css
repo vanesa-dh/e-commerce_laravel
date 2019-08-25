@@ -5,10 +5,18 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background-image: url("../img/hearts_3.png");
+  /* background-image: url("../img/hearts_3.png"); */
   background-repeat: repeat;
   color: dimgray;
   margin:0,auto;
+}
+
+.theme1 {
+  background-image: url("../img/hearts_3.png");
+}
+
+.theme2 {
+  background-image: url("../img/hearts_2.png");
 }
 
 .contenedor{
@@ -50,10 +58,16 @@ body {
   background-color: white;
   padding: 15px;
 }
-.header_nav, .header_busqueda{
+.header_nav {
   flex-grow: 2;
   flex-basis: 0;
 }
+
+.header_busqueda{
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
 .header_nav ul {
   flex-direction: column;
 }
