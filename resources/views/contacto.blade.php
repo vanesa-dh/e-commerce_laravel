@@ -1,7 +1,7 @@
 @extends("plantilla")
-<?php
-$titulo = "FAQ - Preguntas frecuentes";
-?>
+@section("titulo")
+  Contacto - Vasanjohel
+@endsection
 
 @section ("principal")
 <!-- INICIO de CONTACTO -->

@@ -28,6 +28,18 @@ body {
 } */
 /* PASÉ LOS ESTILOS DE ESA MEDIA QUERY ABAJO DE TODO */
 
+/* INICIO Carousel */
+.carousel{
+  display:flex;
+  flex-grow: 1;
+  margin: 0 auto;
+  padding: 15px 15px 15px;
+  color:inherit;
+  height: 100%;
+  width: 100%;
+}
+/* FIN Carousel */
+
 .header_container{
   /* border: red dotted 1px; */
   display: flex;
