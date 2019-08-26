@@ -6,13 +6,13 @@
 
 
 @section('principal')
-<!-- {{dd($productToShow->image)}} -->
+
   <!-- Acá va el producto que se quiere inspeccionar -->
   <div class="products_container">
 
     <div class="product_container">
       <div class="product_imagen">
-          <img src="/storage/products/{{ $productToShow->image }}" alt="photo">
+          <img src="storage/{{ $productToShow->image }}" alt="photo">
       </div>
       <div class="product_cloth">
           {{ $productToShow->name }}

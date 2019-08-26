@@ -48,7 +48,8 @@ class ProductsController extends Controller
     public function show($id)
     {
         $productToShow = Product::find($id);
-        return view('detalles', compact('productToShow'));
+        $vac = compact("productToShow");
+        return view('detalles', $vac);
     }
 
     /**
