@@ -12,7 +12,7 @@
 
     <div class="product_container">
       <div class="product_imagen">
-          <img src="{{ $productToShow->image }}" alt="photo">
+          <img src="/storage/products/{{ $productToShow->image }}" alt="photo">
       </div>
       <div class="product_cloth">
           {{ $productToShow->name }}
