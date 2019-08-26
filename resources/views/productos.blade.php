@@ -18,7 +18,7 @@
         {{ $product->name }}
       </div>
       <div class="product_precio1">
-        {{ $product->price }}
+        $ {{ $product->price }}
       </div>
     </div>
   @endforeach

@@ -24,7 +24,7 @@
           {{ $productToShow->name }}
       </div>
       <div class="product_precio">
-        {{ $productToShow->price }}
+        $ {{ $productToShow->price }}
       </div>
       <div class="product_descripcion">   <!-- quizás se podría agregar en la tabla una columna "descripción" para esto -->
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
