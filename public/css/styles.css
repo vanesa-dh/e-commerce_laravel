@@ -130,7 +130,7 @@ body {
 /*FIN BANNER*/
 
 /*INICIO PRODUCTOS */
-.products_container{
+.products_container, .cart_container{
   background-color: white;
   margin-top: 25px;
   margin-bottom: 25px;
@@ -449,7 +449,7 @@ text-decoration:none;
 .question-container i{
   color: #c78283;
 }
-.question-container p, .question-container h3, .question-container h4{
+.question-container p, .question-container h3, .question-container h4, .submit_cart, .products_cart_container{
   padding: 0px 25px 0px;
 }
 .question-container h3{
@@ -539,6 +539,11 @@ text-decoration:none;
   display: flex;
   flex-direction: column;
   padding: 10px 30px 50px 30px;
+}
+
+.profile_container h1{
+  font-weight: bold;
+  color: #c78283;
 }
 .info_profile_container{
   display: inline-flex;

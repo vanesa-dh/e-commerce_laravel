@@ -24,7 +24,7 @@ Route::get('/contacto', 'SiteController@showContact'); //ruta a la página de co
 
 Route::get('/carrito', 'CartsController@index'); //ruta al carrito
 
-Route::get('/perfil', 'UsersController@index')->middleware('auth'); //ruta al perfil del usuario
+Route::get('/perfil/{user}', 'UsersController@show')->middleware('auth'); //ruta al perfil del usuario
 
 Route::get('/registro', 'Auth\RegisterController@showRegistrationForm'); //ruta GET al formulario de registro
 

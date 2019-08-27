@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class UsersController extends Controller
 {
@@ -11,18 +12,18 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() 
-    {
-        return view('perfil');
-    }
-    public function showRegister()
-    {
-        return view('registro');
-    }
-    public function showLogin()
-    {
-        return view('login');
-    }
+    // public function index()
+    // {
+    //     return view('perfil');
+    // }
+    // public function showRegister()
+    // {
+    //     return view('registro');
+    // }
+    // public function showLogin()
+    // {
+    //     return view('login');
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -55,9 +56,11 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($user)
     {
-        //
+      $userToShow = User::where('user_name', $user)->first();
+      $purchases = Purchase::where()
+      return view('perfil', compact('userToShow'));
     }
 
     /**
