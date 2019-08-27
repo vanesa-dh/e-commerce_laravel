@@ -28,6 +28,8 @@ Route::get('/perfil', 'UsersController@index')->middleware('auth'); //ruta al pe
 
 Route::get('/registro', 'Auth\RegisterController@showRegistrationForm'); //ruta GET al formulario de registro
 
+Route::get('/login', 'Auth\LoginController@showRegistrationForm'); //ruta GET al formulario de login
+
 /* Route::post('/registro', 'UsersController@createUser'); //ruta POST al formulario de registro
 
 Route::get('/login', 'UsersController@showLogin'); // ruta GET al formulario de login
