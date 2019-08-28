@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 
-class ProductsController extends Controller
+class SiteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class ProductsController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('productos', compact('products'));
+        return view('inicio', compact('products'));
     }
 
     /**
@@ -47,8 +47,15 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        $productToShow = Product::find($id);
-        return view('detalles', compact("productToShow"));
+        //
+    }
+    public function showFaq()
+    {
+        return view('faq');
+    }
+    public function showContact()
+    {
+        return view('contacto');
     }
 
     /**
