@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-
-<?php
-if (isset(auth()->user()->user_name)) {
-  $user = auth()->user()->user_name;
-  $href = "perfil/$user";
-} else {
-  $href = '/login';
-}
- ?>
-
 <html>
   <head>
     <meta charset="utf-8">
@@ -78,7 +68,7 @@ if (isset(auth()->user()->user_name)) {
         <div class="header_iconos">
           <ul class="header_ul">
             <li><a href="/registro"><i class="fas fa-user-plus fa-2x"></i></a></li>
-            <li><a href="{{ $href }}"><i class="fas fa-user fa-2x"></i></a></li>
+            <li><a href="/login"><i class="fas fa-user fa-2x"></i></a></li>
             <li><a href="/carrito"><i class="fas fa-cart-arrow-down fa-2x"></i></a></li>
           </ul>
         </div>
@@ -123,7 +113,7 @@ if (isset(auth()->user()->user_name)) {
                     <li><a href="/login">Login</a></li>
                     <li><a href="/registro">Registrarse</a></li>
                     {{-- <li><a href="#">Recuperar contraseña</a></li> --}}
-                    <li><a href="{{ $href }}">Mi perfil</a></li>
+                    <li><a href="/login">Mi perfil</a></li>
               </ul>
             </div>
 
