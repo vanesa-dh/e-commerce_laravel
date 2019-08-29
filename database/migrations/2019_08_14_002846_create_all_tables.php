@@ -74,6 +74,10 @@ class CreateAllTables extends Migration
 
         Schema::dropIfExists('products');
 
+        // Schema::table('categories', function($table) {
+        //   $table->dropForeign(['category_id']);
+        // });
+
         Schema::dropIfExists('categories');
     }
 }

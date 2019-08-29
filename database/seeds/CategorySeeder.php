@@ -10,16 +10,16 @@ class CategorySeeder extends Seeder
      *
      * @return void
      */
-    // public function run()
-    // {
-    //     Category::insert([
-    //       'category' -> 'Vestimenta'
-    //     ]);
-    //     Category::insert([
-    //       'category' -> 'Accesorios'
-    //     ]);
-    //     Category::insert([
-    //       'category' -> 'Zapatos'
-    //     ]);
-    // }
+    public function run()
+    {
+        Category::insert([
+          'category' -> 'Vestimenta'
+        ]);
+        Category::insert([
+          'category' -> 'Accesorios'
+        ]);
+        Category::insert([
+          'category' -> 'Zapatos'
+        ]);
+    }
 }
