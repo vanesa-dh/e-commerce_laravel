@@ -1,4 +1,16 @@
 <!DOCTYPE html>
+
+<?php
+if (isset(auth()->user()->user_name)) {
+  $user = auth()->user()->user_name;
+  $href = "perfil/$user";
+} else {
+  $href = '/login';
+}
+
+
+ ?>
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -113,7 +125,7 @@
                     <li><a href="/login">Login</a></li>
                     <li><a href="/registro">Registrarse</a></li>
                     {{-- <li><a href="#">Recuperar contraseña</a></li> --}}
-                    <li><a href="/perfil">Mi perfil</a></li>
+                    <li><a href="{{ $href }}">Mi perfil</a></li>
               </ul>
             </div>
 
