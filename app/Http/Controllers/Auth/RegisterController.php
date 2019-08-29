@@ -28,7 +28,16 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = "/perfil";
+    // protected $redirectTo = "/perfil";
+
+    protected function redirectTo(){
+  if (isset(auth()->user()->user_name)) {
+    $user = auth()->user()->user_name;
+    return "/perfil/$user";
+  } else {
+    return '/';
+  }
+}
 
     /**
      * Create a new controller instance.
