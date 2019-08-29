@@ -59,7 +59,7 @@ class UsersController extends Controller
     public function show($user)
     {
       $userToShow = User::where('user_name', $user)->first();
-      $purchases = Purchase::where()
+      // $purchases = Purchase::where()
       return view('perfil', compact('userToShow'));
     }
 
