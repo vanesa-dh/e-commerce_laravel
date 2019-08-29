@@ -7,8 +7,6 @@ if (isset(auth()->user()->user_name)) {
 } else {
   $href = '/login';
 }
-
-
  ?>
 
 <html>
@@ -80,7 +78,7 @@ if (isset(auth()->user()->user_name)) {
         <div class="header_iconos">
           <ul class="header_ul">
             <li><a href="/registro"><i class="fas fa-user-plus fa-2x"></i></a></li>
-            <li><a href="/login"><i class="fas fa-user fa-2x"></i></a></li>
+            <li><a href="{{ $href }}"><i class="fas fa-user fa-2x"></i></a></li>
             <li><a href="/carrito"><i class="fas fa-cart-arrow-down fa-2x"></i></a></li>
           </ul>
         </div>
