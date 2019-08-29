@@ -1,11 +1,17 @@
-@extends('layouts.app')
+@extends('plantilla')
 
-@section('content')
+@section("titulo")
+  Login - Vasanjohel
+@endsection
+
+@section('principal')
+<div class="cart_container">
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+            <div >
+                {{-- <div >{{ __('Reset Password') }}</div> --}}
 
                 <div class="card-body">
                     @if (session('status'))
@@ -33,8 +39,8 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
+                                <button type="submit" class="button_register">
+                                    {{ __('Enviar link de recuperar') }}
                                 </button>
                             </div>
                         </div>
@@ -43,5 +49,7 @@
             </div>
         </div>
     </div>
+</div>
+
 </div>
 @endsection
