@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
 
+
 class ProductsController extends Controller
 {
     /**
@@ -22,15 +23,15 @@ class ProductsController extends Controller
 
     public function index(){
         $products = Product::paginate(6);
-        return view('productos', compact('products'));
+        $categorias = Category::all();
+
+        $vestimenta = Product::where("category_id","=",1);
+        $accesorios = Product::where("category_id","=",2);
+        $zapatos = Product::where("category_id","=",3);
+
+        return view('productos', compact('products', 'categorias','vestimenta','accesorios', 'zapatos')
+        );
     }
-
-    // public function productsVestimenta() {
-    //     $vestimenta = Product::where('id',"=",1)-> get();
-    // 		return view('productos', compact('vestimenta'));
-    // 		}
-
-
 
     /**
      * Show the form for creating a new resource.
