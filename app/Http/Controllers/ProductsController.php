@@ -58,9 +58,25 @@ class ProductsController extends Controller
 
     public function store(Request $request)
     {
+      $reglas = [
+        'name' => 'string|unique:products,name|required',
+        'image' => 'file|required',
+        'price' => 'numeric|required',
+        'category' => 'required'
+      ];
+      $mensajes = [
+        'string' => 'El campo debe ser un texto',
+        'numeric' => 'El campo debe ser numérico',
+        'required' => 'El campo es obligatorio'
+      ];
+
+      $this->validate($request, $reglas, $mensajes);
+
       $product = new Product();
       $product->name = $request['name'];
-      $product->image = $request['image'];
+      $ruta = $request->file('image')->store('public');
+      $imageName = basename($ruta);
+      $product->image = $imageName;
       $product->price = $request['price'];
       $product->category_id = $request['category'];
       $product-> save();
