@@ -15,12 +15,12 @@
       <h1>@ {{ $userToShow->user_name }}</h1>
       <div class="info_profile_container">
         <div class="profile_img">
-          <img src="/storage/users/{{ $userToShow->profile_photo }}" alt="profile image">
-          <a class="edit_profile" href="#">Editar <i class="fas fa-user-edit"></i></a>
+          <img src='{{ ($userToShow->profile_photo != null) ? "/storage/users/$userToShow->profile_photo" : "/img/profile-img.jpg" }}' alt="profile image">
+          <!-- <a class="edit_profile" href="#">Editar <i class="fas fa-user-edit"></i></a> -->
         </div>
         <div class="profile_info">
           <div class="profile_title">
-            <a class="edit_profile" href="#"><i class="fas fa-user-edit"></i></a>
+            <!-- <a class="edit_profile" href="#"><i class="fas fa-user-edit"></i></a> -->
             <h3>Datos personales</h3>
           </div>
           <ul class="p_list">
