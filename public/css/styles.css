@@ -122,6 +122,31 @@ body {
 }
 /* FIN STYLES del HEADER */
 
+.page-item.active .page-link{
+  color: #fff;
+  background-color: #c78283;
+  border-color: #c78283;
+}
+
+.page-link:hover {
+    z-index: 2;
+    color: #c78283;
+    text-decoration: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+  }
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #c78283;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+
 /*INICIO BANNER*/
 .full-width {
   margin-bottom: 20px;
