@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Category;
 
 class ProductsController extends Controller
 {
@@ -47,9 +48,22 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+     public function addProduct()
+     {
+         $categories = Category::all();
+         return view('agregarProducto', compact('categories'));
+     }
+
     public function store(Request $request)
     {
-        //
+      $product = new Product();
+      $product->name = $request['name'];
+      $product->image = $request['image'];
+      $product->price = $request['price'];
+      $product->category_id = $request['category'];
+      $product-> save();
+      return redirect('productos');
     }
 
     /**

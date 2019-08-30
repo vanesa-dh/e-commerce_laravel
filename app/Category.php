@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
   //Debo aclarar 4 atributos para que se relacione con la DB
-  public $table = "products";
+  public $table = "categories";
   //public $primaryKey = "id";
   //public $timestamps = false;
   public $guarded = [];

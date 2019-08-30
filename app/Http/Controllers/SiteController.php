@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\User;
+use App\Category;
 
 class SiteController extends Controller
 {
@@ -58,6 +59,7 @@ class SiteController extends Controller
     {
         return view('contacto');
     }
+  
 
     /**
      * Show the form for editing the specified resource.

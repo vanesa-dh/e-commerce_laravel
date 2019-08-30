@@ -22,6 +22,10 @@ Route::get('/faq', 'SiteController@showFaq'); //ruta a las preguntas frecuentes
 
 Route::get('/contacto', 'SiteController@showContact'); //ruta a la página de contacto
 
+Route::get('/agregar', 'ProductsController@addProduct'); //ruta GET a la página de agregar producto
+
+Route::post('/agregar', 'ProductsController@store'); //ruta POST a la página de agregar producto
+
 Route::get('/carrito', 'CartsController@index'); //ruta al carrito
 
 Route::get('/perfil/{user}', 'UsersController@show'); //->middleware('auth'); //ruta al perfil del usuario
