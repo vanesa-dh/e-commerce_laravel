@@ -72,11 +72,7 @@
                         <div class="form-group row">
                           <label class="col-md-4 col-form-label text-md-right" for="country">{{ __('País de nacimiento') }}</label>
                           <div class="col-md-6">
-                            <select id="selectRegister" class="form-control @error('country') is-invalid @enderror" name="country" value="{{ old('country') }}">
-                              <!-- <option value="" disabled selected>Elige un país</option>
-                              <option value="1">Option 1</option>
-                              <option value="2">Option 2</option>
-                              <option value="3">Option 3</option> -->
+                            <select id="selectRegisterCountry" class="form-control @error('country') is-invalid @enderror" name="country" value="{{ old('country') }}">
                             </select>
                             @error('country')
                                 <span class="invalid-feedback" role="alert">
@@ -88,6 +84,23 @@
                         </div>
 
                         <!-- Fin de selección de país -->
+                        <!-- Inicio select Provincias -->
+
+                        <div id="provinceDiv" class="form-group row">
+                          <label class="col-md-4 col-form-label text-md-right" for="country">{{ __('Provincia') }}</label>
+                          <div class="col-md-6">
+                            <select id="selectRegisterProvince" class="form-control @error('province') is-invalid @enderror" name="province" value="{{ old('province') }}">
+                            </select>
+                            @error('province')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                          </div>
+
+                        </div>
+
+                        <!-- fin select privincias -->
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
