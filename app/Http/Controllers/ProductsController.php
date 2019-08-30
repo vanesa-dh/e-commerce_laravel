@@ -23,15 +23,20 @@ class ProductsController extends Controller
 
     public function index(){
         $products = Product::paginate(6);
+
         $categorias = Category::all();
 
-        $vestimenta = Product::where("category_id","=",1);
-        $accesorios = Product::where("category_id","=",2);
-        $zapatos = Product::where("category_id","=",3);
+        // $vestimenta = Product::where("category_id","=",1);
+        // $accesorios = Product::where("category_id","=",2);
+        // $zapatos = Product::where("category_id","=",3);
+        // return view('productos', compact('products', 'categorias','vestimenta','accesorios', 'zapatos')
+        // );
 
-        return view('productos', compact('products', 'categorias','vestimenta','accesorios', 'zapatos')
+        return view('productos', compact('products', 'categorias')
         );
     }
+
+
 
     /**
      * Show the form for creating a new resource.
