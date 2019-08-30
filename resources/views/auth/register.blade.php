@@ -5,6 +5,7 @@
 @endsection
 
 @section('principal')
+
 <div class="cart_container">
 
 
@@ -66,6 +67,27 @@
                                 @enderror
                             </div>
                         </div>
+                        <!-- Inicio de selección de país -->
+
+                        <div class="form-group row">
+                          <label class="col-md-4 col-form-label text-md-right" for="country">{{ __('País de nacimiento') }}</label>
+                          <div class="col-md-6">
+                            <select id="selectRegister" class="form-control @error('country') is-invalid @enderror" name="country" value="{{ old('country') }}">
+                              <!-- <option value="" disabled selected>Elige un país</option>
+                              <option value="1">Option 1</option>
+                              <option value="2">Option 2</option>
+                              <option value="3">Option 3</option> -->
+                            </select>
+                            @error('country')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                          </div>
+
+                        </div>
+
+                        <!-- Fin de selección de país -->
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
@@ -103,4 +125,5 @@
     </div>
 
 </div>
+<script type="text/javascript" src="/js/register.js"></script>
 @endsection
