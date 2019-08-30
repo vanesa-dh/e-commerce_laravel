@@ -27,14 +27,14 @@
 
                     <div class="col-md-6">
                       <select id="selectCategoria" class="form-control" name="categoria" value="{{ old('categoria') }}">
-                        <option value="">Seleccionar</option>
-                        <option value="V" @if (old('categoria') == "V") {{ 'selected' }} @endif>Vestimenta</option>
-                        <option value="A" @if (old('categoria') == "A") {{ 'selected' }} @endif>Accesorios</option>
-                        <option value="Z" @if (old('categoria') == "Z") {{ 'selected' }} @endif>Zapatos</option>
+                        @foreach($categorias as $categoria)
+                          <option value="">
+                          {{ $categoria->category }}
+                          </option>
+                        @endforeach
                       </select>
                     </div>
                 </div>
-
 
                 <div class="form-group row mb-0">
                     <div class="col-md-8 offset-md-4">
@@ -47,8 +47,6 @@
             </form>
         </div>
     </div>
-
-
 
 <div class="products_container_2">
     <div class="products_container">
