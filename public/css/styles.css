@@ -23,6 +23,10 @@ body {
   background-image: url("../img/hearts_1.png");
 }
 
+.icon-color-paint {
+  color: #c78283;
+}
+
 .contenedor{
   /* Contenedor del contenido del body */
   margin: 35px 70px 25px;
