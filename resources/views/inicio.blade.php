@@ -56,21 +56,24 @@
   <!-- INICIO DE PRODUCTOS DE MUESTRA-->
 
   <div class="products_container">
-    @foreach ($products as $product)
-      @if($product->id < 4) <!-- esto es para que no me muestre más de tres productos -->
-        <div class="product_container">
-          <div class="product_imagen">
-            <a href="/detalles/{{ $product->id }}"><img src="/storage/products/{{ $product->image }}" alt="photo"></a>
-          </div>
-          <div class="product_descripcion">
-            {{ $product->name }}
-          </div>
-          <div class="product_precio1">
-            $ {{ $product->price }}
-          </div>
+      <?php $count = 0; ?>
+      @foreach ($products as $product)
+      <div class="product_container">
+        <div class="product_imagen">
+          <a href="/detalles/{{ $product->id }}"><img src="/storage/products/{{ $product->image }}" alt="photo"></a>
         </div>
+        <div class="product_descripcion">
+          {{ $product->name }}
+        </div>
+        <div class="product_precio1">
+          $ {{ $product->price }}
+        </div>
+      </div>
+      <?php $count++ ?>
+      @if($count > 2)
+      <?php break; ?>
       @endif
-    @endforeach
+      @endforeach
 
   </div>
   <!-- FIN DE PRODUCTOS MUESTRA -->

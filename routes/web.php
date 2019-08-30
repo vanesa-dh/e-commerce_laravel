@@ -26,6 +26,10 @@ Route::get('/agregar', 'ProductsController@addProduct'); //ruta GET a la página
 
 Route::post('/agregar', 'ProductsController@store'); //ruta POST a la página de agregar producto
 
+Route::get('/eliminar', 'ProductsController@deleteProduct'); //ruta GET a la página de eliminar un producto
+
+Route::post('/eliminar', 'ProductsController@destroy'); //ruta POST a la página de eliminar un producto
+
 Route::get('/carrito', 'CartsController@index'); //ruta al carrito
 
 Route::get('/perfil/{user}', 'UsersController@show'); //->middleware('auth'); //ruta al perfil del usuario
