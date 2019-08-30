@@ -10,7 +10,7 @@
 <section class="div_container">
     <div class="login_container">
 
-     <div>
+     <div class="div_container">
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="categoria" class="col-md-4 col-form-label text-md-right">{{ __('Categoria') }}</label>
+                    <label for="categoria" class="col-md-4 col-form-label text-md-right">{{ __('Categoría') }}</label>
 
                     <div class="col-md-6">
                       <select id="selectCategoria" class="form-control" name="categoria" value="{{ old('categoria') }}">
@@ -39,11 +39,32 @@
                         </button>
                     </div>
                 </div>
-                
+
             </form>
         </div>
 
     </div>
+
+    <!-- Inicio Muestra de productos -->
+    <div class="products_container">
+      @foreach ($products as $product)
+        <div class="product_container">
+          <div class="product_imagen">
+            <a href="/detalles/{{ $product->id }}"><img src="/storage/products/{{ $product->image }}" alt="photo"></a>
+          </div>
+          <div class="product_descripcion">
+            {{ $product->name }}
+          </div>
+          <div class="product_precio1">
+            $ {{ $product->price }}
+          </div>
+        </div>
+      @endforeach
+    </div>
+    <!-- Fin Muestra de productos -->
+
+
+
 </section>
 
 </div>
