@@ -12,11 +12,24 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $products = Product::all();
+
+    // Esta funcion me trae todos los productos:
+    // public function index(){
+    //     $products = Product::all();
+    //     return view('productos', compact('products'));
+    // }
+
+    public function index(){
+        $products = Product::paginate(6);
         return view('productos', compact('products'));
     }
+
+    // public function productsVestimenta() {
+    //     $vestimenta = Product::where('id',"=",1)-> get();
+    // 		return view('productos', compact('vestimenta'));
+    // 		}
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -84,4 +97,6 @@ class ProductsController extends Controller
     {
         //
     }
+
+
 }
