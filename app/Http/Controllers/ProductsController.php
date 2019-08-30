@@ -25,9 +25,13 @@ class ProductsController extends Controller
         $products = Product::paginate(6);
         $categorias = Category::all();
 
-        return view('productos', compact('products'), compact('categorias'));
-    }
+        $vestimenta = Product::where("category_id","=",1);
+        $accesorios = Product::where("category_id","=",2);
+        $zapatos = Product::where("category_id","=",3);
 
+        return view('productos', compact('products', 'categorias','vestimenta','accesorios', 'zapatos')
+        );
+    }
 
     /**
      * Show the form for creating a new resource.
