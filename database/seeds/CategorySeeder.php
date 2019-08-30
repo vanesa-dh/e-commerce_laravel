@@ -12,14 +12,27 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        Category::insert([
-          'category' -> 'Vestimenta'
+        // Category::insert([
+        //   'category' -> 'Vestimenta'
+        // ]);
+        // Category::insert([
+        //   'category' -> 'Accesorios'
+        // ]);
+        // Category::insert([
+        //   'category' -> 'Zapatos'
+        // ]);
+
+        DB::table('categories') -> insert([
+          'category' => 'Vestimenta'
         ]);
-        Category::insert([
-          'category' -> 'Accesorios'
+
+        DB::table('categories') -> insert([
+          'category' => 'Accesorios'
         ]);
-        Category::insert([
-          'category' -> 'Zapatos'
+
+        DB::table('categories') -> insert([
+          'category' => 'Zapatos'
         ]);
+
     }
 }
