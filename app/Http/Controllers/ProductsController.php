@@ -79,7 +79,7 @@ class ProductsController extends Controller
 
       $product = new Product();
       $product->name = $request['name'];
-      $ruta = $request->file('image')->store('public');
+      $ruta = $request->file('image')->store('public/products');
       $imageName = basename($ruta);
       $product->image = $imageName;
       $product->price = $request['price'];
