@@ -9,6 +9,10 @@
 <!-- INICIO DE PRODUCTOS DE MUESTRA -->
 <div class="products_container">
 
+
+
+
+
   @foreach ($products as $product)
     <div class="product_container">
       <div class="product_imagen">

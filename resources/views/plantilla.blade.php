@@ -53,17 +53,19 @@
             <li><a href="/faq">FAQ</a></li>
             <li><a href="/contacto">Contacto</a></li>
             {{-- <li><a id="myTheme" onclick="changeTheme()"><i class="fas fa-paint-roller fa-2x"></i></a></li> --}}
-            <li><a onclick="changeTheme()"><i class="fas fa-paint-roller fa-2x"></i></a></li>
+            <li><a onclick="changeTheme()"><i class="fas fa-paint-roller fa-2x icon-color-paint"></i></a></li>
           </ul>
         </div>
         <!-- FIN contenedor del menu -->
+
         <!-- INICIO contenedor de la barra de busqueda -->
-        <div class="header_busqueda">
+        {{-- <div class="header_busqueda">
           <form class="header_busquedaForm" action="/" method="post">
             <input class="header_busquedaInput" type="search" name="busqueda" value="" placeholder="Buscar productos...">
           </form>
-        </div>
+        </div> --}}
         <!-- FIN contenedor de la barra de busqueda -->
+
         <!-- INICIO contenedor de los iconos -->
         <div class="header_iconos">
           <ul class="header_ul">
