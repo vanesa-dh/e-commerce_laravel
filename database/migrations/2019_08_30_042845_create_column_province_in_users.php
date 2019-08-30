@@ -14,7 +14,7 @@ class CreateColumnProvinceInUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('province')->after('country');
+            $table->string('province')->after('country')->nullable();
         });
     }
 
