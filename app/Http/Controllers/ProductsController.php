@@ -15,30 +15,33 @@ class ProductsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    // Esta funcion me trae todos los productos:
-    // public function index(){
-    //     $products = Product::all();
-    //     return view('productos', compact('products'));
-    // }
-
     public function index(Request $request){
-        $products = Product::paginate(6);
 
-        $categorias = Category::all();
-
+        // Esto mantiene persistencia en el campo buscador y en el select
         $buscador = $request->input('buscador');
         $categoriaSeleccionada = $request->input('categoria');
 
-// Esto me muestra en el server corriendo la variable $categorias a chequear si enviar bien los datos
+        // $products = Product::paginate(6);
+        if ($categoriaSeleccionada) {
+          $products = Product::where("category_id","=",$categoriaSeleccionada)->paginate(6);
+        } else {
+          $products = Product::paginate(6);
+        }
+
+        $categorias = Category::all();
+
+
+
+
+        // Esto me muestra en el server corriendo la variable $categorias a chequear si enviar bien los datos
         $output = new \Symfony\Component\Console\Output\ConsoleOutput();
-        $output->writeln($categoriaSeleccionada);
+        $output->writeln($products);
 
 
         // $vestimenta = Product::where("category_id","=",1);
         // $accesorios = Product::where("category_id","=",2);
         // $zapatos = Product::where("category_id","=",3);
-        // return view('productos', compact('products', 'categorias','vestimenta','accesorios', 'zapatos')
-        // );
+
 
         return view('productos', compact('products', 'categorias', 'buscador', 'categoriaSeleccionada')
         );
