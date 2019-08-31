@@ -27,19 +27,18 @@
         $ {{ $productToShow->price }}
       </div>
       <div class="product_descripcion">   <!-- quizás se podría agregar en la tabla una columna "descripción" para esto -->
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Aliquam vitae mollis dolor, sit amet consectetur lacus.
-        Cras tincidunt in ipsum at mollis.
-        Curabitur tempus nunc vel dolor vehicula eleifend.
-        In eget urna eget eros feugiat aliquam.
+        Compra online sujeta a disponibilidad de stock.
+        Consultá nuestras facilidades de pago.
+        <br><br>
+        Precios válidos para venta web y telefónica, no aplican al local de venta.
       </div>
 
       <div class="product_botton_buy">
       <a class="hypervinc_comprar" href="#">Agregar al carrito</a> <br>
       </div>
-      <div class="product_botton_fav">
+      {{-- <div class="product_botton_fav">
       <a class="hypervinc_favoritos" href="#">Mis favoritos</a> <br>
-      </div>
+      </div> --}}
 
     </div>
   </div>

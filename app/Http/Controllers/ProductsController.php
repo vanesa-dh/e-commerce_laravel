@@ -53,8 +53,8 @@ class ProductsController extends Controller
 
 
         // Esto me muestra en el server corriendo la variable $categorias a chequear si enviar bien los datos
-        $output = new \Symfony\Component\Console\Output\ConsoleOutput();
-        $output->writeln($categoriaSeleccionada);
+        // $output = new \Symfony\Component\Console\Output\ConsoleOutput();
+        // $output->writeln($categoriaSeleccionada);
 
 
         return view('productos', compact('products', 'categorias', 'buscador', 'categoriaSeleccionada')
