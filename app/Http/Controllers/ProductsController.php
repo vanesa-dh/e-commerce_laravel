@@ -31,8 +31,6 @@ class ProductsController extends Controller
         $categorias = Category::all();
 
 
-
-
         // Esto me muestra en el server corriendo la variable $categorias a chequear si enviar bien los datos
         $output = new \Symfony\Component\Console\Output\ConsoleOutput();
         $output->writeln($products);
