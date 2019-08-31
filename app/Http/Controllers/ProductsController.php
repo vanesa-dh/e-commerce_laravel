@@ -21,24 +21,40 @@ class ProductsController extends Controller
         $buscador = $request->input('buscador');
         $categoriaSeleccionada = $request->input('categoria');
 
-        // $products = Product::paginate(6);
-        if ($categoriaSeleccionada) {
+        // if ($categoriaSeleccionada) {
+        //   $products = Product::where("category_id","=",$categoriaSeleccionada)->paginate(6);
+        // } else {
+        //   $products = Product::paginate(6);
+        // }
+
+
+        // Si categoria y No buscador = filtro por categoria:
+        if ($categoriaSeleccionada && !$buscador ) {
           $products = Product::where("category_id","=",$categoriaSeleccionada)->paginate(6);
-        } else {
+        // Si categoria y Si buscador = filtro por categoria y palabra clave:
+        } elseif ($categoriaSeleccionada && $buscador) {
+          $products = Product::where("category_id","=",$categoriaSeleccionada)
+                              ->where("name", "like", "%" . $buscador . "%")
+                              ->paginate(6);
+        // No categoria y Si buscador = filtro por categoria y palabra clave:
+        } elseif (!$categoriaSeleccionada && $buscador) {
+          $products = Product::where("name","like", "%" . $buscador . "%")
+                              ->paginate(6);
+        }
+        else {
+          // No categoria y No buscador = todos
           $products = Product::paginate(6);
         }
 
+
+
+        // Carga la lista de categorias
         $categorias = Category::all();
 
 
         // Esto me muestra en el server corriendo la variable $categorias a chequear si enviar bien los datos
         $output = new \Symfony\Component\Console\Output\ConsoleOutput();
-        $output->writeln($products);
-
-
-        // $vestimenta = Product::where("category_id","=",1);
-        // $accesorios = Product::where("category_id","=",2);
-        // $zapatos = Product::where("category_id","=",3);
+        $output->writeln($categoriaSeleccionada);
 
 
         return view('productos', compact('products', 'categorias', 'buscador', 'categoriaSeleccionada')
