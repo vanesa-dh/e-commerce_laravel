@@ -21,10 +21,18 @@ class ProductsController extends Controller
     //     return view('productos', compact('products'));
     // }
 
-    public function index(){
+    public function index(Request $request){
         $products = Product::paginate(6);
 
         $categorias = Category::all();
+
+        $buscador = $request->input('buscador');
+        $categoriaSeleccionada = $request->input('categoria');
+
+// Esto me muestra en el server corriendo la variable $categorias a chequear si enviar bien los datos
+        $output = new \Symfony\Component\Console\Output\ConsoleOutput();
+        $output->writeln($categoriaSeleccionada);
+
 
         // $vestimenta = Product::where("category_id","=",1);
         // $accesorios = Product::where("category_id","=",2);
@@ -32,7 +40,7 @@ class ProductsController extends Controller
         // return view('productos', compact('products', 'categorias','vestimenta','accesorios', 'zapatos')
         // );
 
-        return view('productos', compact('products', 'categorias')
+        return view('productos', compact('products', 'categorias', 'buscador', 'categoriaSeleccionada')
         );
     }
 
