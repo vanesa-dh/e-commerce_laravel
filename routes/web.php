@@ -35,7 +35,7 @@ Route::post('/eliminar', 'ProductsController@destroy'); //ruta POST a la página
 
 Route::get('/modificar/{id}', 'ProductsController@edit'); //ruta GET a la página de modificar producto
 
-Route::post('/{id}', 'ProductsController@update'); //ruta POST a la página de modificar producto
+Route::post('/productos/{id}', 'ProductsController@update'); //ruta POST a la página de modificar producto
 
 Route::get('/carrito', 'CartsController@index'); //ruta al carrito
 
