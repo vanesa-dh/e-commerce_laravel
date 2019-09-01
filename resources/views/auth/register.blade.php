@@ -73,6 +73,7 @@
                           <label class="col-md-4 col-form-label text-md-right" for="country">{{ __('País de nacimiento') }}</label>
                           <div class="col-md-6">
                             <select id="selectRegisterCountry" class="form-control @error('country') is-invalid @enderror" name="country" value="{{ old('country') }}">
+                              <option value="" disabled selected>Seleccione un país</option>
                             </select>
                             @error('country')
                                 <span class="invalid-feedback" role="alert">
@@ -90,6 +91,7 @@
                           <label class="col-md-4 col-form-label text-md-right" for="country">{{ __('Provincia') }}</label>
                           <div class="col-md-6">
                             <select id="selectRegisterProvince" class="form-control @error('province') is-invalid @enderror" name="province" value="{{ old('province') }}">
+                              <option value="" disabled selected>Seleccione una provincia</option>
                             </select>
                             @error('province')
                                 <span class="invalid-feedback" role="alert">

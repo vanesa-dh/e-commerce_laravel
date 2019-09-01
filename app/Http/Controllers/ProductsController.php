@@ -52,7 +52,7 @@ class ProductsController extends Controller
 
     public function addToCart(Request $request, $id){
 
-    
+
 
 
       return redirect('/productos');
@@ -131,7 +131,8 @@ class ProductsController extends Controller
     public function edit($id)
     {
       $product = Product::find($id);
-      return view('modificar', compact('product'));
+      $categories = Category::all();
+      return view('modificar', compact('product', 'categories'));
     }
 
     /**
@@ -143,7 +144,30 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $product = Product::find($id);
+      $reglas = [
+        'nombre' => 'string',
+        'imagen' => 'file',
+        'precio' => 'numeric',
+      ];
+      $mensajes = [
+        'string' => 'El campo debe ser un texto',
+        'numeric' => 'El campo debe ser numérico',
+      ];
+
+      $this->validate($request, $reglas, $mensajes);
+
+      $product->name = $request->input('name');
+      if ($request->file('image') != null) {
+        $ruta = $request->file('image')->store('public/products');
+        $imageName = basename($ruta);
+        $product->image = $imageName;
+      }
+      $product->price = $request->input('price');
+      $product->category_id = $request->input('category');
+      $product->save();
+
+    return redirect('/productos');
     }
 
     /**

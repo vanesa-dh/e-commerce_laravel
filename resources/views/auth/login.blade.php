@@ -65,7 +65,7 @@
 
                                 @if (Route::has('password.request'))
                                     <a class="hypervinc_login" href="{{ route('password.request') }}">
-                                        {{ __('Olvidaste la contraseña?') }}
+                                        {{ __('¿Olvidaste la contraseña?') }}
                                     </a>
                                 @endif
                             </div>
