@@ -21,13 +21,6 @@ class ProductsController extends Controller
         $buscador = $request->input('buscador');
         $categoriaSeleccionada = $request->input('categoria');
 
-        // if ($categoriaSeleccionada) {
-        //   $products = Product::where("category_id","=",$categoriaSeleccionada)->paginate(6);
-        // } else {
-        //   $products = Product::paginate(6);
-        // }
-
-
         // Si categoria y No buscador = filtro por categoria:
         if ($categoriaSeleccionada && !$buscador ) {
           $products = Product::where("category_id","=",$categoriaSeleccionada)->paginate(6);
@@ -46,21 +39,25 @@ class ProductsController extends Controller
           $products = Product::paginate(6);
         }
 
-
-
         // Carga la lista de categorias
         $categorias = Category::all();
-
 
         // Esto me muestra en el server corriendo la variable $categorias a chequear si enviar bien los datos
         // $output = new \Symfony\Component\Console\Output\ConsoleOutput();
         // $output->writeln($categoriaSeleccionada);
 
-
         return view('productos', compact('products', 'categorias', 'buscador', 'categoriaSeleccionada')
         );
     }
 
+    public function addToCart(Request $request, $id){
+
+    
+
+
+      return redirect('/productos');
+
+    }
 
 
     /**

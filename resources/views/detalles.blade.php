@@ -34,7 +34,7 @@
       </div>
 
       <div class="product_botton_buy">
-      <a class="hypervinc_comprar" href="#">Agregar al carrito</a> <br>
+      <a class="hypervinc_comprar" href="/detalles/{{ $productToShow->id }}/agregarEnCarrito">Agregar al carrito</a> <br>
       </div>
       {{-- <div class="product_botton_fav">
       <a class="hypervinc_favoritos" href="#">Mis favoritos</a> <br>
