@@ -11,13 +11,13 @@
 |
 */
 
-
 Route::get('/', 'SiteController@index'); //ruta a la página principal
 
 Route::get('/productos', 'ProductsController@index'); //ruta a la página de productos
 Route::post('/productos', 'ProductsController@index'); //ruta a la página de productos via POST
 
 Route::get('/detalles/{id}', 'ProductsController@show'); //ruta a los detalles de un producto
+Route::get('/detalles/{id}/agregarEnCarrito', 'ProductsController@addToCart'); //ruta a los detalles de un producto via POST
 
 Route::get('/faq', 'SiteController@showFaq'); //ruta a las preguntas frecuentes
 

@@ -10,15 +10,14 @@ class CartsController extends Controller
     public function index(Request $request)
     {
 
-      $valorSesionActiva = $request->session()
-                          ->get('key', function(){
-                          return 'default';
-                          });
-
-      $output = new \Symfony\Component\Console\Output\ConsoleOutput();
-      $output->writeln($valorSesionActiva);
-
-    return view('carrito');
+      // $valorSesionActiva = $request->session()
+      //                     ->get('key', function(){
+      //                     return 'default';
+      //                     });
+      //
+      // $output = new \Symfony\Component\Console\Output\ConsoleOutput();
+      // $output->writeln($valorSesionActiva);
+      return view('carrito');
     }
 
 
