@@ -7,7 +7,7 @@
 @section ("principal")
 <div class="cart_container">
   <div class="div_container">
-    <div class="card-body">
+    <div class=""> <!-- card-body -->
       <form class="delete_product" action="/eliminar" method="post">
         @csrf
         <div class="form-group row">
