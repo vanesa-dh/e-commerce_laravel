@@ -50,16 +50,12 @@ class ProductsController extends Controller
         );
     }
 
-    public function addToCart(Request $request){
+    public function addToCart(Request $request, $id){
 
-      // $idProducto = $request[session][id];
-      $idProducto = $request['id'];
-      // dd($request);
+    
 
-      // $output = new \Symfony\Component\Console\Output\ConsoleOutput();
-      // $output->writeln($categoriaSeleccionada);
 
-      return redirect('detalles/{ $idProducto }');
+      return redirect('/productos');
 
     }
 
