@@ -427,6 +427,14 @@ text-decoration:none;
 }
 /* Fin del contenedor de mapa */
 
+.hypervinc_comprar{
+  text-decoration: none;
+  color: inherit;
+}
+.hypervinc_comprar:hover{
+  color: #c78283;
+}
+
 /* INICIO Styles del REGISTRO y LOGIN */
 .hypervinc_register, .hypervinc_login{
   text-decoration: none;

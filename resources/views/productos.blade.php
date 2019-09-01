@@ -18,7 +18,7 @@
               <div class="form-group row">
                   <label for="buscador" class="col-md-4 col-form-label text-md-right">{{ __('Buscar') }}</label>
                   <div class="col-md-6">
-                      <input id="buscador" type="search" class="form-control" name="buscador" value="{{ old('buscador') }}" autofocus>
+                      <input id="buscador" type="search" class="form-control" name="buscador" value="{{ $buscador }}" autofocus>
                   </div>
               </div>
 {{-- Fin - Campo de busqueda --}}
@@ -27,11 +27,11 @@
               <div class="form-group row">
                   <label for="categoria" class="col-md-4 col-form-label text-md-right">{{ __('Categoría') }}</label>
                   <div class="col-md-6">
-                    <select id="selectCategoria" class="form-control" name="categoria" value="{{ old('categoria') }}">
-                      {{-- <option value="" selected> Todos </option> --}}
+                    <select id="categoria" class="form-control" name="categoria">
+                      <option value="0" > Todos </option>
                       @foreach($categorias as $categoria)
-                        <option value="">
-                        {{ $categoria->category }}
+                        <option value="{{ $categoria->id }}" @if($categoria->id == $categoriaSeleccionada) selected @endif >
+                          {{ $categoria->category }}
                         </option>
                       @endforeach
                     </select>
