@@ -9,7 +9,6 @@ class CartsController extends Controller
 
     public function index(Request $request)
     {
-
       // $valorSesionActiva = $request->session()
       //                     ->get('key', function(){
       //                     return 'default';
@@ -17,7 +16,17 @@ class CartsController extends Controller
       //
       // $output = new \Symfony\Component\Console\Output\ConsoleOutput();
       // $output->writeln($valorSesionActiva);
-      return view('carrito');
+      if (auth()->user() != null) {
+        $userId = auth()->user()->id;
+        $cart = Cart::where('user_id', $userId)->latest()->first();
+        if ($cart->active == true) {
+          return view('carrito', compact($cart));
+        }else {
+          return view('carrito');
+        }
+      }else {
+        return view('carrito');
+      }
     }
 
 

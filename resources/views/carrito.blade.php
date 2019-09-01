@@ -15,13 +15,22 @@
     </div>
     <h3>Productos seleccionados:</h3>
 
+    {{-- Acá va la lista de productos del carrito del usuario --}}
     <div class="products_cart_container">
-      
-      {{-- Acá va la lista de productos del carrito del usuario --}}
+      <div class="one_product">
+        <ul class="product_ul">
+          @if(isset($cart))
+            <li class="product_li"></li>
+          @else
+            <span>No se han seleccionado productos</span>
+          @endif
+        </ul>
+      </div>
     </div>
 
     <div class="submit_cart">
       <form class="" action="#" method="post">
+        @csrf
         <div class="">
           <button class="button_register" type="submit" name="button"> Comprar </button><br><br>
         </div>
@@ -31,5 +40,5 @@
 
  </div>
 
-
+<script type="text/javascript" src="/js/carrito.js"></script>
 @endsection

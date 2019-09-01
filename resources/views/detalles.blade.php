@@ -33,8 +33,11 @@
         Precios válidos para venta web y telefónica, no aplican al local de venta.
       </div>
 
-      <div class="product_botton_buy">
-      <a class="hypervinc_comprar" href="/detalles/{{ $productToShow->id }}/agregarEnCarrito">Agregar al carrito</a> <br>
+      <div class="product_botton">
+        <form class="" action="/detalles/{{ $productToShow->id }}" method="post">
+          @csrf
+          <button type="submit" id="buttonCart" class="button_register" name="button" value="{{ $productToShow->id }}">Agregar al carrito</button>
+        </form>
       </div>
       {{-- <div class="product_botton_fav">
       <a class="hypervinc_favoritos" href="#">Mis favoritos</a> <br>
@@ -42,4 +45,5 @@
 
     </div>
   </div>
+  <script type="text/javascript" src="/js/carrito.js"></script>
 @endsection

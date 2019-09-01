@@ -19,7 +19,7 @@ Route::post('/productos', 'ProductsController@index'); //ruta a la página de pr
 
 Route::get('/detalles/{id}', 'ProductsController@show'); //ruta a los detalles de un producto
 
-Route::get('/detalles/{id}/agregarEnCarrito', 'ProductsController@addToCart'); //ruta a los detalles de un producto via POST
+Route::post('/detalles/{id}', 'ProductsController@addToCart'); //ruta POST a agregar al carrito 
 
 Route::get('/faq', 'SiteController@showFaq'); //ruta a las preguntas frecuentes
 
@@ -35,7 +35,7 @@ Route::post('/eliminar', 'ProductsController@destroy'); //ruta POST a la página
 
 Route::get('/modificar/{id}', 'ProductsController@edit'); //ruta GET a la página de modificar producto
 
-Route::post('/productos/{id}', 'ProductsController@update'); //ruta POST a la página de modificar producto
+Route::post('/modificar/{id}', 'ProductsController@update'); //ruta POST a la página de modificar producto
 
 Route::get('/carrito', 'CartsController@index'); //ruta al carrito
 

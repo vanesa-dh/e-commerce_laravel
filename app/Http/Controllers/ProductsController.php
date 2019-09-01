@@ -51,12 +51,18 @@ class ProductsController extends Controller
     }
 
     public function addToCart(Request $request, $id){
+      $productToCart = Product::find($id);
+      $userId = auth()->user()->id;
+      $cart = Cart::where('user_id', $userId)->latest()->first();
+      if ($cart->active == true){ //si ya hay un carrito activo
 
-
-
-
-      return redirect('/productos');
-
+      } else { //si no lo hay
+        $cart = new Cart;
+        $cart->user_id = $userId;
+        $cart->active = true;
+        $cart->save();
+      }
+      return view('carrito');
     }
 
 
