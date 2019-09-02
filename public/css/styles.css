@@ -483,6 +483,27 @@ text-decoration:none;
   color: white;
   border-radius: 8px;
 }
+
+.button_eliminar{
+  font-size: 0.8em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 0.5em 1em;
+  background-color: white;
+  color: #c78283;
+  border-radius: 8px;
+  border-style:solid;
+}
+.button_eliminar:hover{
+  font-size: 0.8em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 0.5em 1em;
+  background-color: #fcf2f3;
+  color: #c78283;
+  border-radius: 8px;
+  border-style:solid;
+}
 /*.message_error{
   color: red;
 }*/
