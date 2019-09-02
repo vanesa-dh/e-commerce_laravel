@@ -482,6 +482,7 @@ text-decoration:none;
   background-color: #c78283;
   color: white;
   border-radius: 8px;
+  border-style:solid;
 }
 
 .button_eliminar{
