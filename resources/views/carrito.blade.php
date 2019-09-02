@@ -20,11 +20,14 @@
       <div class="one_product">
         <ul class="product_ul">
           @if(isset($lastCart))
-            <li class="product_li">Producto: {{ $lastCart->id }} </li>
+            @foreach($lastCart->products as $product)
+            <li class="product_li">Producto: {{ $product->name }} </li>
             <form class="" action="/carrito/eliminar" method="post">
-              <button type="button" name="button" class="button_register" value="{{ $lastCart->$product->name }}">Eliminar del carrito</button>
+              @csrf
+              <button type="button" name="button" class="button_register" value="{{ $product->id }}">Eliminar del carrito</button>
             </form>
-            <li>Total: $  </li>
+            @endforeach
+            <strong>Total: $</strong>
           @else
             <span>No se han seleccionado productos</span>
           @endif

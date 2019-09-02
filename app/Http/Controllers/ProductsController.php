@@ -82,8 +82,6 @@ class ProductsController extends Controller
           if ($cart->user_id == $userId && $cart->active == true) {
             $lastCart = $cart;
             return view('carrito', compact('lastCart'));
-          } else {
-            return view('carrito');
           }
         }
       } else {
@@ -92,36 +90,40 @@ class ProductsController extends Controller
     }
 
     public function addToCart(Request $request){
-      $productToCart = Product::find($request['button']);
-      $userId = auth()->user()->id;
-      $carts = Cart::all();
-      $total = 0;
-      foreach ($carts as $cart) {
-        if ($cart->user_id == $userId && $cart->active == true) {
-          $lastCart = $cart;
+      if (auth()->user()) {
+        $productToCart = Product::find($request['button']);
+        $userId = auth()->user()->id;
+        $carts = Cart::all();
+        $total = 0;
+        foreach ($carts as $cart) {
+          if ($cart->user_id == $userId && $cart->active == true) {
+            $lastCart = $cart;
+          }
         }
+          if (!isset($lastCart)) { //pregunto si no existe algun carrito del usuario, para crearle uno
+            $lastCart = new Cart;
+            $lastCart->user_id = $userId;
+            $lastCart->active = true;
+            $lastCart->save();
+            $lastCart->products()->attach($productToCart->id);
+            $total = $total + $productToCart->price;
+          } else { //en caso de que ya tenga, me quedo con el activo
+            $lastCart->products()->attach($productToCart->id);
+            $total = $total + $productToCart->price;
+          }
+        // if ($cart->active == true){ //si ya hay un carrito activo
+        //   $cart->$productToCart->attach($product_id, $cart_id);
+        // } else { //si no lo hay
+        //   $cart = new Cart;
+        //   $cart->user_id = $userId;
+        //   $cart->active = true;
+        //   $cart->save();
+        //   $cart->$productToCart->attach($product_id, $cart_id);
+        // }
+        return view('carrito', compact('total', 'lastCart'));
+      } else {
+        return redirect('login');
       }
-        if (!isset($lastCart)) { //pregunto si no existe algun carrito del usuario, para crearle uno
-          $lastCart = new Cart;
-          $lastCart->user_id = $userId;
-          $lastCart->active = true;
-          $lastCart->save();
-          $lastCart->products()->attach($productToCart->id);
-          $total = $total + $productToCart->price;
-        } else { //en caso de que ya tenga, me quedo con el activo
-          $lastCart->products()->attach($productToCart->id);
-          $total = $total + $productToCart->price;
-        }
-      // if ($cart->active == true){ //si ya hay un carrito activo
-      //   $cart->$productToCart->attach($product_id, $cart_id);
-      // } else { //si no lo hay
-      //   $cart = new Cart;
-      //   $cart->user_id = $userId;
-      //   $cart->active = true;
-      //   $cart->save();
-      //   $cart->$productToCart->attach($product_id, $cart_id);
-      // }
-      return view('carrito', compact('total'));
     }
 
     public function deleteFromCart(Request $request)
