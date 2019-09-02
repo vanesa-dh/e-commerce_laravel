@@ -57,8 +57,8 @@
               <form method="POST" action="{{ route('logout') }}">
                   @csrf
 
-                  <div class="form-group row mb-0">
-                      <div class="col-md-8 offset-md-4">
+                  <div class="form-group">
+                      <div class="col-md-8">
                           <button type="submit" class="button_register">
                               {{ __('Desloguearse') }}
                           </button>
@@ -67,6 +67,16 @@
               </form>
           </div>
           {{-- fin del boton de logout --}}
+
+          <div class="col-md-8">
+            <div class="">
+              <a href="{{ route('llevaAlPanelABM') }}">
+                  <button type="button" class="button_register">
+                    {{ __('Al Panel AMB') }}
+                  </button>
+              </a>
+            </div>
+          </div>
 
         </div>
       </div>

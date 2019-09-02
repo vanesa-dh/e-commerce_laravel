@@ -51,12 +51,22 @@ class ProductsController extends Controller
     }
 
     public function addToCart(Request $request, $id){
+      //
+    return redirect('/productos');
+    }
 
 
+    public function llevaAlPanelABM(){
+      $products = Product::all();
+      //
+    return view('vistaPanelABM', compact('products'));
+    }
 
 
-      return redirect('/productos');
+    public function leeElPost(Request $request){
 
+      $id = $request->input('id');
+      return redirect('/modificar/' . $id);
     }
 
 

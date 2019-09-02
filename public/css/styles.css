@@ -476,7 +476,8 @@ text-decoration:none;
 }
 .button_register, .button_login{
   font-size: 1.2em;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding: 0.5em 1.2em;
   background-color: #c78283;
   color: white;

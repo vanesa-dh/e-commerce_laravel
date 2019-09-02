@@ -11,6 +11,10 @@
 |
 */
 
+Route::post('/rutaModificar', 'ProductsController@leeElPost')->name('leeElPost');
+
+Route::get('/vistaPanelABM' , 'ProductsController@llevaAlPanelABM')->name('llevaAlPanelABM'); // Ruta a los 3 botones de ABM
+
 Route::get('/', 'SiteController@index'); //ruta a la página principal
 
 Route::get('/productos', 'ProductsController@index'); //ruta a la página de productos
