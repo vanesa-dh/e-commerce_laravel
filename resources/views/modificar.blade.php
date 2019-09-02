@@ -9,7 +9,7 @@
   <div class="div_container">
     <div class="col-md-8">
       <div class="card-body">
-        <form class="add_product" enctype="multipart/form-data" action="/productos/{{ $product->id }}" method="post">
+        <form class="add_product" enctype="multipart/form-data" action="/modificar/{{ $product->id }}" method="post">
           @csrf
 
           <div class="form-group row">
