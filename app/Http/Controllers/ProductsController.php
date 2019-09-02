@@ -75,15 +75,18 @@ class ProductsController extends Controller
       //
       // $output = new \Symfony\Component\Console\Output\ConsoleOutput();
       // $output->writeln($valorSesionActiva);
-      if (auth()->user() != null) {
+      if (auth()->user()) { //si hay un usuario loggeado...
         $userId = auth()->user()->id;
-        $cart = Cart::where('user_id', $userId)->latest()->first();
-        if (isset($cart) && $cart->active == true) {
-            return view('carrito', compact('cart'));
-        }else {
-          return view('carrito');
+        $carts = Cart::all();
+        foreach ($carts as $cart) {
+          if ($cart->user_id == $userId && $cart->active == true) {
+            $lastCart = $cart;
+            return view('carrito', compact('lastCart'));
+          } else {
+            return view('carrito');
+          }
         }
-      }else {
+      } else {
         return view('carrito');
       }
     }
@@ -119,6 +122,20 @@ class ProductsController extends Controller
       //   $cart->$productToCart->attach($product_id, $cart_id);
       // }
       return view('carrito', compact('total'));
+    }
+
+    public function deleteFromCart(Request $request)
+    {
+      $productToDelete = Product::find($request['button']);
+      $userId = auth()->user()->id;
+      $carts = Cart::all();
+      foreach ($carts as $cart) {
+        if ($cart->user_id == $userId && $cart->active == true) {
+          $lastCart = $cart;
+        }
+      }
+      $lastCart->products()->detach($productToDelete->id);
+      return redirect('carrito');
     }
 
     public function comprar(Request $request)

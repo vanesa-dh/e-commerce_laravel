@@ -19,24 +19,28 @@
     <div class="products_cart_container">
       <div class="one_product">
         <ul class="product_ul">
-          @if(isset($cart))
-            <li class="product_li">Producto: {{ $cart->id }} </li>
+          @if(isset($lastCart))
+            <li class="product_li">Producto: {{ $lastCart->id }} </li>
+            <form class="" action="/carrito/eliminar" method="post">
+              <button type="button" name="button" class="button_register" value="{{ $lastCart->$product->name }}">Eliminar del carrito</button>
+            </form>
+            <li>Total: $  </li>
           @else
             <span>No se han seleccionado productos</span>
           @endif
-          <li>Total: $  </li>
         </ul>
       </div>
     </div>
-
-    <div class="submit_cart">
-      <form class="" action="/carrito/comprar" method="post">
-        @csrf
-        <div class="">
-          <button class="button_register" type="submit" name="button" value=" {{ $cart->id }} "> Comprar </button><br><br>
-        </div>
-      </form>
-    </div>
+    @if(isset($lastCart))
+      <div class="submit_cart">
+        <form class="" action="/carrito/comprar" method="post">
+          @csrf
+          <div class="">
+            <button class="button_register" type="submit" name="button" value=" {{ $lastCart->id }} "> Comprar </button><br><br>
+          </div>
+        </form>
+      </div>
+    @endif
   </section>
 
  </div>

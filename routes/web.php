@@ -47,6 +47,8 @@ Route::post('/carrito', 'ProductsController@addToCart'); //ruta POST al carrito 
 
 Route::post('/carrito/comprar', 'ProductsController@comprar'); //ruta POST al carrito para comprar
 
+Route::post('/carrito/eliminar', 'ProductsController@deleteFromCart'); //ruta POST al carrito para quitar producto
+
 Route::get('/perfil/{user}', 'UsersController@show'); //->middleware('auth'); //ruta al perfil del usuario
 
 Route::get('/registro', 'Auth\RegisterController@showRegistrationForm'); //ruta GET al formulario de registro
