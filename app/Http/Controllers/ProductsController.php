@@ -84,12 +84,14 @@ class ProductsController extends Controller
               $lastCart = $cart; //recolecta los datos del carrito
               return view('carrito', compact('lastCart')); //los envía a la vista
             } else { //en caso de que el carrito no esté activo, le dice que prosiga con el siguiente bucle foreach
-              continue;
+              return view('carrito');
             }
           } else { //si no hay carrito que le pertenezca al usuario, devuelve la vista carrito normal
             return view('carrito');
           }
         }
+    } else {
+      return view('carrito');
     }
   }
 
