@@ -91,6 +91,11 @@ class ProductsController extends Controller
       }
     }
 
+    public function gracias(){
+      $products = Product::all();
+      return view('gracias', compact('products'));
+    }
+
     public function addToCart(Request $request){
       if (auth()->user()) {
         $productToCart = Product::find($request['button']);
