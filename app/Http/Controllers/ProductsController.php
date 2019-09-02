@@ -66,7 +66,7 @@ class ProductsController extends Controller
 
     }
 
-    public function carrito(Request $request)
+    public function carrito()
     {
       // $valorSesionActiva = $request->session()
       //                     ->get('key', function(){
@@ -75,9 +75,9 @@ class ProductsController extends Controller
       //
       // $output = new \Symfony\Component\Console\Output\ConsoleOutput();
       // $output->writeln($valorSesionActiva);
-      if (auth()->user()) { //si hay un usuario loggeado...
-        $userId = auth()->user()->id;
-        $carts = Cart::all();
+      if (auth()->user()) { //pregunta si hay un usuario logueado
+        $userId = auth()->user()->id; //me quedo con el id del usuario
+        $carts = Cart::all(); //me traigo todos los carritos que hay en la DB
         foreach ($carts as $cart) { //recorre todos los carritos
           if ($cart->user_id == $userId) { //pregunta si el carrito le pertenece al usuario
             if ($cart->active == true) { //si le pertenece, pregunta si el carrito está activo
@@ -148,7 +148,8 @@ class ProductsController extends Controller
         }
       }
       $lastCart->products()->detach($productToDelete->id);
-      return redirect('carrito');
+      return view('carrito', compact('lastCart'));
+      // return redirect('carrito');
     }
 
     public function comprar(Request $request)
