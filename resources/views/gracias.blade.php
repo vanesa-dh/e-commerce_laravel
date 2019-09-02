@@ -1,7 +1,7 @@
 @extends("plantilla")
 
 @section("titulo")
-  Preguntas Frecuentes - Vasanjohel
+  Gracias - Vasanjohel
 @endsection
 
 @section ("principal")

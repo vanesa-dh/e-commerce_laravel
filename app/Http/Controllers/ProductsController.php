@@ -79,11 +79,16 @@ class ProductsController extends Controller
         $userId = auth()->user()->id;
         $carts = Cart::all();
         foreach ($carts as $cart) {
+          // while ($cart->user_id != $userId && $cart->active != true) {
+          //   continue;
+          // }
+          // $lastCart = $cart;
+          // return view('carrito', compact('lastCart'));
           if ($cart->user_id == $userId && $cart->active == true) {
             $lastCart = $cart;
             return view('carrito', compact('lastCart'));
           } else {
-            // return view('carrito');
+            return view('carrito');
           }
         }
       } else {
