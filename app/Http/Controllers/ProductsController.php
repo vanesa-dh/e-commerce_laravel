@@ -159,7 +159,7 @@ class ProductsController extends Controller
       $purchase->date = $now->format('Y-m-d');
       $purchase->total = 65;
       $purchase->save();
-      return redirect('/');
+      return redirect('/gracias');
     }
 
 

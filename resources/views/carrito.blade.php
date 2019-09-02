@@ -36,7 +36,7 @@
     </div>
     @if(isset($lastCart))
       <div class="submit_cart">
-        <form class="" action="/gracias" method="post">
+        <form class="" action="/carrito/comprar" method="post">
           @csrf
           <div class="">
             <button class="button_register" type="submit" name="button" value=" {{ $lastCart->id }} "> Comprar </button><br><br>

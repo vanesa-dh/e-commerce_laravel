@@ -15,7 +15,7 @@ Route::post('/rutaModificar', 'ProductsController@leeElPost')->name('leeElPost')
 
 Route::get('/vistaPanelABM' , 'ProductsController@llevaAlPanelABM')->name('llevaAlPanelABM'); // Ruta a los 3 botones de ABM
 
-Route::get('/', 'SiteController@index'); //ruta a la página principal
+Route::get('/', 'SiteController@index'); //ruta a la página principal54ewa
 
 Route::get('/productos', 'ProductsController@index'); //ruta a la página de productos
 
@@ -45,7 +45,7 @@ Route::get('/carrito', 'ProductsController@carrito'); //ruta GET al carrito
 
 Route::post('/carrito', 'ProductsController@addToCart'); //ruta POST al carrito para agregar producto
 
-Route::post('/gracias', 'ProductsController@gracias');
+Route::get('/gracias', 'ProductsController@gracias');
 
 Route::post('/carrito/comprar', 'ProductsController@comprar'); //ruta POST al carrito para comprar
 
