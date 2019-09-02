@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
+use App\Cart;
+use App\Purchase;
 
 
 class ProductsController extends Controller
@@ -50,19 +52,74 @@ class ProductsController extends Controller
         );
     }
 
-    public function addToCart(Request $request, $id){
-      $productToCart = Product::find($id);
-      $userId = auth()->user()->id;
-      $cart = Cart::where('user_id', $userId)->latest()->first();
-      if ($cart->active == true){ //si ya hay un carrito activo
-
-      } else { //si no lo hay
-        $cart = new Cart;
-        $cart->user_id = $userId;
-        $cart->active = true;
-        $cart->save();
+    public function carrito(Request $request)
+    {
+      // $valorSesionActiva = $request->session()
+      //                     ->get('key', function(){
+      //                     return 'default';
+      //                     });
+      //
+      // $output = new \Symfony\Component\Console\Output\ConsoleOutput();
+      // $output->writeln($valorSesionActiva);
+      if (auth()->user() != null) {
+        $userId = auth()->user()->id;
+        $cart = Cart::where('user_id', $userId)->latest()->first();
+        if (isset($cart) && $cart->active == true) {
+            return view('carrito', compact('cart'));
+        }else {
+          return view('carrito');
+        }
+      }else {
+        return view('carrito');
       }
-      return view('carrito');
+    }
+
+    public function addToCart(Request $request){
+      $productToCart = Product::find($request['button']);
+      $userId = auth()->user()->id;
+      $carts = Cart::all();
+      $total = 0;
+      foreach ($carts as $cart) {
+        if ($cart->user_id == $userId && $cart->active == true) {
+          $lastCart = $cart;
+        }
+      }
+        if (!isset($lastCart)) { //pregunto si no existe algun carrito del usuario, para crearle uno
+          $lastCart = new Cart;
+          $lastCart->user_id = $userId;
+          $lastCart->active = true;
+          $lastCart->save();
+          $lastCart->products()->attach($productToCart->id);
+          $total = $total + $productToCart->price;
+        } else { //en caso de que ya tenga, me quedo con el activo
+          $lastCart->products()->attach($productToCart->id);
+          $total = $total + $productToCart->price;
+        }
+      // if ($cart->active == true){ //si ya hay un carrito activo
+      //   $cart->$productToCart->attach($product_id, $cart_id);
+      // } else { //si no lo hay
+      //   $cart = new Cart;
+      //   $cart->user_id = $userId;
+      //   $cart->active = true;
+      //   $cart->save();
+      //   $cart->$productToCart->attach($product_id, $cart_id);
+      // }
+      return view('carrito', compact('total'));
+    }
+
+    public function comprar(Request $request)
+    {
+      $cart = Cart::where('id', $request['button'])->first();
+      $cart->active = false;
+      $cart->save();
+      $purchase = new Purchase;
+      $purchase->user_id = auth()->user()->id;
+      $purchase->cart_id = $cart->id;
+      $now = new \DateTime();
+      $purchase->date = $now->format('Y-m-d');
+      $purchase->total = 65;
+      $purchase->save();
+      return redirect('/');
     }
 
 
