@@ -23,7 +23,7 @@ Route::post('/productos', 'ProductsController@index'); //ruta a la página de pr
 
 Route::get('/detalles/{id}', 'ProductsController@show'); //ruta a los detalles de un producto
 
-Route::post('/detalles/{id}', 'ProductsController@addToCart'); //ruta POST a agregar al carrito
+Route::post('/carrito', 'ProductsController@addToCart'); //ruta POST a agregar al carrito
 
 Route::get('/faq', 'SiteController@showFaq'); //ruta a las preguntas frecuentes
 

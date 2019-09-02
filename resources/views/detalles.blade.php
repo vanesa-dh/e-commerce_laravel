@@ -34,7 +34,7 @@
       </div>
 
       <div class="product_botton">
-        <form class="" action="/detalles/{{ $productToShow->id }}" method="post">
+        <form class="" action="/carrito" method="post">
           @csrf
           <button type="submit" id="buttonCart" class="button_register" name="button" value="{{ $productToShow->id }}">Agregar al carrito</button>
         </form>
