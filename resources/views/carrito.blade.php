@@ -24,7 +24,7 @@
             <li class="product_li">Producto: {{ $product->name }} </li>
             <form class="" action="/carrito/eliminar" method="post">
               @csrf
-              <button type="button" name="button" class="button_eliminar" value="{{ $product->id }}"><i class="far fa-trash-alt"></i> Eliminar del carrito</button>
+              <button type="submit" name="button" class="button_eliminar" value="{{ $product->id }}"><i class="far fa-trash-alt"></i> Eliminar del carrito</button>
             </form>
             @endforeach
             <strong>Total: $</strong>

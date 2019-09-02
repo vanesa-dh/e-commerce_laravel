@@ -82,6 +82,8 @@ class ProductsController extends Controller
           if ($cart->user_id == $userId && $cart->active == true) {
             $lastCart = $cart;
             return view('carrito', compact('lastCart'));
+          } else {
+            // return view('carrito');
           }
         }
       } else {
