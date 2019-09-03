@@ -1,7 +1,7 @@
 @extends("plantilla")
 
 @section("titulo")
-  Gracias - Vasanjohel
+  Lo sentimos - Vasanjohel
 @endsection
 
 @section ("principal")
