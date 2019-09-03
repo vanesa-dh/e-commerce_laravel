@@ -77,22 +77,50 @@ class ProductsController extends Controller
       // $output->writeln($valorSesionActiva);
       if (auth()->user()) { //pregunta si hay un usuario logueado
         $userId = auth()->user()->id; //me quedo con el id del usuario
-        $carts = Cart::all(); //me traigo todos los carritos que hay en la DB
-        foreach ($carts as $cart) { //recorre todos los carritos
-          if ($cart->user_id == $userId) { //pregunta si el carrito le pertenece al usuario
-            if ($cart->active == true) { //si le pertenece, pregunta si el carrito está activo
-              $lastCart = $cart; //recolecta los datos del carrito
-              return view('carrito', compact('lastCart')); //los envía a la vista
-            } else { //en caso de que el carrito no esté activo, le dice que prosiga con el siguiente bucle foreach
-              return view('carrito');
-            }
-          } else { //si no hay carrito que le pertenezca al usuario, devuelve la vista carrito normal
-            return view('carrito');
-          }
+        $cart = Cart::where('user_id', $userId)->latest()->first();
+        if ($cart->active == true) { //si le pertenece, pregunta si el carrito está activo
+          $lastCart = $cart; //recolecta los datos del carrito
+          return view('carrito', compact('lastCart')); //los envía a la vista
+        } else { //en caso de que el carrito no esté activo, le dice que prosiga con el siguiente bucle foreach
+          return view('carrito');
         }
-    } else {
-      return view('carrito');
-    }
+      } else {
+        return view('carrito');
+      }
+        // $carts = Cart::all(); //me traigo todos los carritos que hay en la DB
+        // foreach ($carts as $cart) { //recorre todos los carritos
+        //
+        //   if ($cart->user_id == $userId) { //pregunta si el carrito le pertenece al usuario
+        //
+        //     $userCarts[] =$cart;
+        //
+        //
+        //
+        //     // if ($cart->active == true) { //si le pertenece, pregunta si el carrito está activo
+        //     //   $lastCart = $cart; //recolecta los datos del carrito
+        //     //   return view('carrito', compact('lastCart')); //los envía a la vista
+        //     // } else { //en caso de que el carrito no esté activo, le dice que prosiga con el siguiente bucle foreach
+        //     //   return view('carrito');
+        //     // }
+        //
+        //   } else { //si no hay carrito que le pertenezca al usuario, devuelve la vista carrito normal
+        //     return view('carrito');
+        //   }
+        //
+        //   foreach ($userCarts as $userCart) {
+        //     if ($cart->active == true) { //si le pertenece, pregunta si el carrito está activo
+        //       $lastCart = $cart; //recolecta los datos del carrito
+        //       return view('carrito', compact('lastCart')); //los envía a la vista
+        //     }
+        //     } else { //en caso de que el carrito no esté activo, le dice que prosiga con el siguiente bucle foreach
+        //       continue;
+        //     }
+        //   }
+        // }
+
+    // } else { //en caso de que no haya un usuario logueado, muestra el carrito normal
+    //   return view('carrito');
+    // }
   }
 
     public function gracias(){
