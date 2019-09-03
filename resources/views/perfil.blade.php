@@ -54,7 +54,7 @@
 
 
 
-        @if(auth()->user()->id == $userToShow->id)
+        @if(auth()->check() && auth()->user()->id == $userToShow->id)
           {{-- Inicio del boton de logout --}}
           <div class="">
               <form method="POST" action="{{ route('logout') }}">
