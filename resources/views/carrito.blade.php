@@ -27,7 +27,7 @@
               <button type="submit" name="button" class="button_eliminar" value="{{ $product->id }}"><i class="far fa-trash-alt"></i> Eliminar del carrito</button>
             </form>
             @endforeach
-            <strong>Total: $</strong>
+            {{-- <strong>Total: $</strong> --}}
           @else
             <span>No se han seleccionado productos</span>
           @endif
