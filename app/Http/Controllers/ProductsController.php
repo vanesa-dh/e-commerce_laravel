@@ -82,12 +82,17 @@ class ProductsController extends Controller
       if (auth()->user()) { //pregunta si hay un usuario logueado
         $userId = auth()->user()->id; //me quedo con el id del usuario
         $cart = Cart::where('user_id', $userId)->latest()->first();
-        if ($cart->active == true) { //si le pertenece, pregunta si el carrito está activo
-          $lastCart = $cart; //recolecta los datos del carrito
-          return view('carrito', compact('lastCart')); //los envía a la vista
-        } else { //en caso de que el carrito no esté activo, le dice que prosiga con el siguiente bucle foreach
+        if ($cart) {
+          if ($cart->active == true) { //si le pertenece, pregunta si el carrito está activo
+            $lastCart = $cart; //recolecta los datos del carrito
+            return view('carrito', compact('lastCart')); //los envía a la vista
+          } else { //en caso de que el carrito no esté activo, le dice que prosiga con el siguiente bucle foreach
+            return view('carrito');
+          }
+        } else {
           return view('carrito');
         }
+
       } else {
         return view('carrito');
       }
