@@ -42,7 +42,7 @@ class UsersSeeder extends Seeder
         DB::table('users') -> insert(
             [
             'name' => 'Elisabeth',
-            'user_name' => 'Ely',
+            'user_name' => 'ely',
             'email' => 'ely@gmail.com',
             'country' => 'Argentina',
             'province' => 'Buenos Aires',
