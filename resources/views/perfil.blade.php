@@ -68,7 +68,7 @@
           </div>
           {{-- fin del boton de logout --}}
 
-          <div class="col-md-8">
+          {{-- <div class="col-md-8">
             <div class="">
               <a href="{{ route('llevaAlPanelABM') }}">
                   <button type="button" class="button_register">
@@ -76,7 +76,18 @@
                   </button>
               </a>
             </div>
+          </div> --}}
+
+          <div class="col-md-8">
+            <div class="">
+              <a href="{{ route('soloAdmin') }}">
+                  <button type="button" class="button_register">
+                    {{ __('Al Panel AMB') }}
+                  </button>
+              </a>
+            </div>
           </div>
+
 
         </div>
       </div>

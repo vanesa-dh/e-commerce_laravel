@@ -47,6 +47,8 @@ Route::post('/carrito', 'ProductsController@addToCart'); //ruta POST al carrito 
 
 Route::get('/gracias', 'ProductsController@gracias');
 
+Route::get('/soloAdmin', 'ProductsController@soloAdmin')->name('soloAdmin');
+
 Route::post('/carrito/comprar', 'ProductsController@comprar'); //ruta POST al carrito para comprar
 
 Route::post('/carrito/eliminar', 'ProductsController@deleteFromCart'); //ruta POST al carrito para quitar producto

@@ -52,6 +52,12 @@ class ProductsController extends Controller
         );
     }
 
+    public function soloAdmin(){
+      $products = Product::all();
+      //
+    return view('administrador', compact('products'));
+    }
+
     public function llevaAlPanelABM(){
       $products = Product::all();
       //
