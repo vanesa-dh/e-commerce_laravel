@@ -18,7 +18,7 @@ class AdminMiddleware
       if (auth()->check() && auth()->user()->user_name == 'admin'){
         return $next($request);
       } else {
-        return redirect('/');
+        return redirect('/soloAdmin');
       }
     }
 }
