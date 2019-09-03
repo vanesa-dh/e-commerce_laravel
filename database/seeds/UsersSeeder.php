@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\User;
 use Faker\Generator as Faker;
 
 class UsersSeeder extends Seeder
