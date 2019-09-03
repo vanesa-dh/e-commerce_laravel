@@ -13,7 +13,7 @@
 
 Route::post('/rutaModificar', 'ProductsController@leeElPost')->name('leeElPost');
 
-Route::get('/vistaPanelABM' , 'ProductsController@llevaAlPanelABM')->name('llevaAlPanelABM'); // Ruta a los 3 botones de ABM
+Route::get('/vistaPanelABM' , 'ProductsController@llevaAlPanelABM')->name('llevaAlPanelABM')->middleware('admin'); // Ruta a los 3 botones de ABM
 
 Route::get('/', 'SiteController@index'); //ruta a la página principal54ewa
 
