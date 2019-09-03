@@ -34,7 +34,7 @@
               </ul>
             </li> -->
           </ul>
-          <h3>Historial de órdenes</h3>
+          {{-- <h3>Historial de órdenes</h3>
           <ul class="p_list">
             <li><span>Número de orden 111</span> <!-- orden 2 -->
               <ul class="p_sublist"> <!-- datos de la orden 1 -->
@@ -43,14 +43,7 @@
                 <!-- <li><span>Estado: </span>Entregado</li> -->
               </ul>
             </li>
-            <!-- <li> <span>Número de orden 110</span>
-                <ul class="p_sublist">
-                  <li><span>Producto: </span><a href="productos.html">Sweater Winter</a></li>
-                  <li><span>Fecha: </span>04/06/2018</li>
-                  <li><span>Estado: </span>Cancelado</li>
-                </ul>
-            </li> -->
-          </ul>
+          </ul> --}}
 
 
 
@@ -75,7 +68,7 @@
             <div class="">
               <a href="{{ route('llevaAlPanelABM') }}">
                   <button type="button" class="button_register">
-                    {{ __('Al Panel AMB') }}
+                    {{ __('Panel AMB') }}
                   </button>
               </a>
             </div>
